@@ -13,8 +13,6 @@ import rx.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
 
-
-
     var movies = mutableListOf<Movie>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         listMainActivity.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        listMainActivity.adapter = MovieAdapter(movies)
+        listMainActivity.adapter = MovieAdapter(movies, this)
 
         main_bt.setOnClickListener {
             Toast.makeText(this, "uhul", Toast.LENGTH_SHORT).show()
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }, { e ->
             e.printStackTrace()
         },{
-            listMainActivity.adapter = MovieAdapter(movies)
+            listMainActivity.adapter = MovieAdapter(movies, this)
         })
 
 //        api.loadMovies()?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())?.subscribe ({ movie ->

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:id="@+id/rootDetail">
 
     <TextView
@@ -18,6 +18,6 @@
         android:background="#000000"
         android:id="@+id/divider"
         android:transitionName="divider"
-        android:layout_alignBottom="@+id/titleMovie" />
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
